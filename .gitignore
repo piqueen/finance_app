@@ -9,6 +9,9 @@
 # production
 /build
 
+#Files
+plaidClient.js
+
 # misc
 .DS_Store
 .env.local

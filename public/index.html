@@ -3,56 +3,35 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Money$Mapper</title>
+    <title>Money Mapper</title>
+    <h>Money Mapper</h>
     <style>
-        html, body {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            background-color : #1ac4f8;
+        h {
+            color: #000000;
+            width: 1000px;
+            margin: 15px;
+            padding: 400px 0px 10px;
+            font-size: 50px;
+            font-family: "Bahnschrift Light"; 
+            background-size: 400px;
         }
-
-        #map {
-            height: 800px;
-            width: 70%;
-            overflow: hidden;
-            float: left;
-            border: thin solid #333;
-        }
-
                 
-          
     </style>
 </head>
 <body>
-    <h1>Money Mapper</h1>
-    <p>...........insert options...................</p>
-    <div id="map"></div>
-    <div id="capture"></div>
-    <script>
-        var map;
-        var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: new google.maps.LatLng(-19.257753, 146.823688),
-                zoom: 2,
-                mapTypeId: 'terrain'
-            });
-
-            var kmlLayer = new google.maps.KmlLayer(src, {
-                suppressInfoWindows: true,
-                preserveViewport: false,
-                map: map
-            });
-
-           
-            
-        }
-    </script>
+    <div id="root"></div>
+    
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8R2K45QkfSKf1G4Wxyt5To0qcE3nk8E&callback=initMap" >
- </script>
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8R2K45QkfSKf1G4Wxyt5To0qcE3nk8E&callback=initMap"> </script>
+    <script 
+            src= "https://cdn.plaid.com/link/v2/stable/link-initialize.js" ></script>
+    <script type= "text/javascript"> //the language used
+        window.Plaid = Plaid; // What this does is: lets you access plaid anywhere in the application
+            
+    </script>
+        
+            
+ 
 </body>
 </html>
 

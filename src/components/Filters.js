@@ -6,25 +6,38 @@ const CheckboxGroup = Checkbox.Group;
 function onChange(checkedValues) {
   console.log('checked = ', checkedValues);
 }
-const plainOptions = ['Apple', 'Pear', 'Orange'];
+const plainOptions = ['Recreation', 'Arts & Entertainment', 'Circuises and Carnivals', 'Restaurants', 'Retail', 'Other'];
 const options = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange' },
+  { label: 'Restaurants', value: 'Restaurants' },
+  { label: 'Stores', value: 'Stores' },
+  // { label: 'Other', value: 'Other' },
 ];
 const optionsWithDisabled = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange', disabled: false },
+  { label: 'Restaurants', value: 'Restaurants' },
+  { label: 'Stores', value: 'Stores' },
+  //  { label: 'Other', value: 'Other', disabled: false },
 ];
-const Filter = (plainOptions, options, optionsWithDisabled) => (
-  <div>
-    <CheckboxGroup options={plainOptions} defaultValue={['Apple']} onChange={onChange} />
-    <br />
-    <CheckboxGroup options={options} defaultValue={['Pear']} onChange={onChange} />
-    <br />
-    <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['Apple']} onChange={onChange} />
-  </div>
-);
 
-export default Filter;
+const listItems = plainOptions.map(option => <li>{}</li>);
+
+class RestaurantCheck extends React.Component {
+  render() {
+    return (
+      <div>
+        <CheckboxGroup options={plainOptions} defaultValue={['Restaurants']} onChange={onChange} />
+      </div>
+    );
+  }
+}
+class StoreCheck extends React.Component {
+  render() {
+    return (
+      <div>
+        <CheckboxGroup options={options} defaultValue={['Stores']} onChange={onChange} />
+      </div>
+
+    );
+  }
+}
+
+export { RestaurantCheck, StoreCheck };

@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css",
     "\\public",
     "\\src",
     "\\src\\components"
   ],
-  "SelectedNode": "\\src\\components\\Filters.js",
+  "SelectedNode": "\\src\\components\\Plaid.js",
   "PreviewInSolutionExplorer": false
 }

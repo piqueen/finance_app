@@ -8,8 +8,10 @@ var handler = window.Plaid.create({
     env: 'development',
     key: '06dc84cac43d36546eca5e5f2fa604',
     product: ['transactions'],
+
     onSuccess: function (public_token, metadata) {
 
+        axios.post()
         plaidClient.exchangePublicToken(public_token)
             .then(function (res) {
                 const access_token = res.access_token;
@@ -24,8 +26,9 @@ var handler = window.Plaid.create({
     onExit: function (err, metadata) {
         if (err != null) {
             }
-        }
-   })
+    },
+
+ })
 
 
 
@@ -35,13 +38,21 @@ class Plaid extends React.Component{
     }
     render() {
 
-        return ( 
+        return (
             <a onClick={this.openLink}>Create Account</a>
-            )
+               )
     }
 
 
 }
+/*
+const transactions = {
+    client_id:
+
+}
+
+*/
+
 
 export default Plaid;
 

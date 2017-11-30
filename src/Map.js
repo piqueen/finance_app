@@ -22,11 +22,11 @@ const MapWithAFusionTablesLayer = compose(
         defaultCenter={{ lat: 41.850033, lng: -87.6500523 }}
     >
         <FusionTablesLayer
-            url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"
+          
             options={{
                 query: {
                     select: `Geocodable address`,
-                    from: `1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg`
+                    from: ``
                 }
             }}
         />

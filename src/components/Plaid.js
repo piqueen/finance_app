@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import plaidClient from '../plaidClient';
 import { db } from '../firebase';
 
 var handler = window.Plaid.create({
@@ -8,27 +7,19 @@ var handler = window.Plaid.create({
     env: 'development',
     key: '06dc84cac43d36546eca5e5f2fa604',
     product: ['transactions'],
-
     onSuccess: function (public_token, metadata) {
 
-        axios.post()
-        plaidClient.exchangePublicToken(public_token)
-            .then(function (res) {
-                const access_token = res.access_token;
-                console.log(access_token);
-                db.collection('accessTokens').doc(access_token).set(access_token);
-            
-            })
-            .catch(function (err) {
-                console.log(err);
-            })
+      console.log('PUBLIC TOKEN', public_token);
+
+      axios.post('/exchange-token', {public_token})
+        .then(res => console.log(res))
+
     },
     onExit: function (err, metadata) {
         if (err != null) {
             }
-    },
-
- })
+        }
+   })
 
 
 
@@ -40,19 +31,10 @@ class Plaid extends React.Component{
 
         return (
             <a onClick={this.openLink}>Create Account</a>
-               )
+            )
     }
 
 
 }
-/*
-const transactions = {
-    client_id:
-
-}
-
-*/
-
 
 export default Plaid;
-

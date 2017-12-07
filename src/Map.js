@@ -1,12 +1,6 @@
 import React from 'react';
-
-const { compose, withProps } = require('recompose');
-const {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  FusionTablesLayer,
-} = require('react-google-maps');
+import { compose, withProps } from 'recompose';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 
 const MapWithAFusionTablesLayer = compose(
   withProps({
@@ -22,15 +16,5 @@ const MapWithAFusionTablesLayer = compose(
     defaultZoom={11}
     defaultCenter={{ lat: 41.850033, lng: -87.6500523 }}
   >
-    <FusionTablesLayer
-
-      options={{
-                query: {
-                    select: 'Geocodable address',
-                    from: '',
-                },
-            }}
-    />
   </GoogleMap>));
 export default MapWithAFusionTablesLayer;
-  <MapWithAFusionTablesLayer />;
